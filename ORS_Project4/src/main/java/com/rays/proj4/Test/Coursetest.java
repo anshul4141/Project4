@@ -15,7 +15,7 @@ import com.rays.pro4.Model.CourseModel;
 
 /**
  * Course Model Test classes.
- * @author Shubham Yadav
+ * @author Anshul Prajapati
  *
  */
 public class Coursetest {

@@ -26,7 +26,7 @@ import com.rays.pro4.Util.JDBCDataSource;
 /**
  * JDBC Implementation of UserModel.
  * 
- * @author Shubham Yadav
+ * @author Anshul Prajapati
  *
  */
 
@@ -314,7 +314,8 @@ public class UserModel {
 			pstmt.setTimestamp(16, bean.getModifiedDatetime());
 			pstmt.setTimestamp(17, bean.getModifiedDatetime());
 			pstmt.setLong(18, bean.getId());
-			pstmt.executeUpdate();
+			int i = pstmt.executeUpdate();
+			System.out.println("update user>> " + i);
 			conn.commit();
 			pstmt.close();
 		} catch (Exception e) {
@@ -401,6 +402,7 @@ public class UserModel {
 			sql.append(" Limit " + pageNo + ", " + pageSize);
 			// sql.append(" limit " + pageNo + "," + pageSize);
 		}
+		System.out.println("sql query search >>= " + sql.toString());
 		List list = new ArrayList();
 		Connection conn = null;
 		try {

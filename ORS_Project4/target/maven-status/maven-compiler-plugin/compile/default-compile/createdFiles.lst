@@ -5,7 +5,6 @@ com\rays\pro4\Util\EmailMessage.class
 com\rays\pro4\Bean\MarksheetBean.class
 com\rays\pro4\Bean\SubjectBean.class
 com\rays\pro4\Model\CourseModel.class
-com\rays\pro4\Model\AppRole.class
 com\rays\pro4\Util\DataValidator.class
 com\rays\pro4\Util\EmailUtility$1.class
 com\rays\pro4\Bean\FacultyBean.class

@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * User JavaBean encapsulates User attributes.
  * 
- * @author Shubham Yadav
+ * @author Anshul Prajapati
  *
  */
 public class UserBean extends BaseBean {

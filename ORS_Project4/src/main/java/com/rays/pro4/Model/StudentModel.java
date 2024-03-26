@@ -18,7 +18,7 @@ import com.rays.pro4.Util.JDBCDataSource;
 /**
  * JDBC Implementation of Student Model.
  * 
- * @author Shubham Yadav
+ * @author Anshul Prajapati
  *
  */
 public class StudentModel {

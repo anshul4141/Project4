@@ -17,10 +17,9 @@ import com.rays.pro4.Util.ServletUtility;
  * Base controller class of project. It contain (1) Generic operations (2)
  * Generic constants (3) Generic work flow
  *
- * @author Shubham Yadav
+ * @author Anshul Prajapati
  *
  */
-
 public abstract class BaseCtl extends HttpServlet {
 
 	public static final String OP_SAVE = "Save";
@@ -131,7 +130,7 @@ public abstract class BaseCtl extends HttpServlet {
 
 		String op = DataUtility.getString(request.getParameter("operation"));
 		System.out.println("Bctl servi op" + op);
-		// Check if operation is not DELETE, VIEW, CANCEL, and NULL then
+		// Check if operation is not DELETE, VIEW, CANCEL, RESET and NULL then
 		// perform input data validation
 
 		if (DataValidator.isNotNull(op) && !OP_CANCEL.equalsIgnoreCase(op) && !OP_VIEW.equalsIgnoreCase(op)
@@ -152,7 +151,8 @@ public abstract class BaseCtl extends HttpServlet {
 		}
 		System.out.println("B ctl Super servi");
 		super.service(request, response);
-		System.out.println("super. service called method " + request.getMethod() + ">> " +" / "+ " Response is = " + response.encodeURL(op));
+		System.out.println("super. service called method " + request.getMethod() + ">> " + " / " + " Response is = "
+				+ response.encodeURL(op));
 	}
 
 	/**

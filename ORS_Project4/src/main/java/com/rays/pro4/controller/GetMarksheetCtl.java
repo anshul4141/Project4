@@ -23,7 +23,7 @@ import com.rays.pro4.Util.ServletUtility;
 /**
 * Get Marksheet functionality Controller. Performs operation for Get Marksheet
 * 
-* @author Shubham Yadav
+* @author Anshul Prajapati
 */
 @WebServlet(name = "GetMarksheetCtl", urlPatterns = { "/ctl/GetMarksheetCtl" })
 public class GetMarksheetCtl extends BaseCtl{

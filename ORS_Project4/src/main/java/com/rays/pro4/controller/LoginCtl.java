@@ -24,7 +24,7 @@ import com.rays.pro4.Util.ServletUtility;
 /**
  * Servlet implementation class LoginCtl
  * 
- * @author Shubham Yadav
+ * @author Anshul Prajapati
  */
 @WebServlet(name = "LoginCtl", urlPatterns = { "/LoginCtl" })
 public class LoginCtl extends BaseCtl {
@@ -48,13 +48,11 @@ public class LoginCtl extends BaseCtl {
 			return pass;
 		}
 
-		String login = request.getParameter("login");
-
-		if (DataValidator.isNull(login)) {
+		if (DataValidator.isNull(request.getParameter("login"))) {
 			System.out.println("loginctl 11");
 			request.setAttribute("login", PropertyReader.getValue("error.require", "Login Id"));
 			pass = false;
-		} else if (!DataValidator.isEmail(login)) {
+		} else if (!DataValidator.isEmail(request.getParameter("login"))) {
 			System.out.println("loginctl 22");
 			request.setAttribute("login", PropertyReader.getValue("error.email", "Login "));
 			pass = false;

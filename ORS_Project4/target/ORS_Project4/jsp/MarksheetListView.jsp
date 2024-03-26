@@ -26,9 +26,9 @@
 		<%@include file="Header.jsp"%>
 
 		<%
-		List l = (List) request.getAttribute("rollNo");
+			List l = (List) request.getAttribute("rollNo");
 
-		int next = DataUtility.getInt(request.getAttribute("nextlist").toString());
+			int next = DataUtility.getInt(request.getAttribute("nextlist").toString());
 		%>
 
 		<center>
@@ -42,15 +42,15 @@
 				</h2>
 			</div>
 			<%
-			int pageNo = ServletUtility.getPageNo(request);
-			int pageSize = ServletUtility.getPageSize(request);
-			int index = ((pageNo - 1) * pageSize) + 1;
+				int pageNo = ServletUtility.getPageNo(request);
+				int pageSize = ServletUtility.getPageSize(request);
+				int index = ((pageNo - 1) * pageSize) + 1;
 
-			List list = ServletUtility.getList(request);
-			/*  	System.out.println("list aayi");*/
-			Iterator<MarksheetBean> it = list.iterator();
+				List list = ServletUtility.getList(request);
+				/*  	System.out.println("list aayi");*/
+				Iterator<MarksheetBean> it = list.iterator();
 
-			if (list.size() != 0) {
+				if (list.size() != 0) {
 			%>
 
 
@@ -62,8 +62,8 @@
 
 						&emsp; <label> Result :</font></label> <input type="text" name="result"
 						placeholder="Enter pass fail"
-						value="<%=DataUtility.getString(
-		request.getParameter("result") == null ? "" : DataUtility.getString(request.getParameter("result")))%>">
+						value="<%=DataUtility.getString(request.getParameter("result") == null ? ""
+						: DataUtility.getString(request.getParameter("result")))%>">
 						&emsp; <label>RollNo :</label> <%-- <input type="text" name="rollNo" placeholder="Enter Roll Number" value="<%=ServletUtility.getParameter("rollNo", request)%>">
                     --%> <%=HTMLUtility.getList("rollNo123", String.valueOf(bean.getId()), l)%>
 						&nbsp;<input type="submit" name="operation"
@@ -94,25 +94,25 @@
 					<th>Edit</th>
 				</tr>
 				<%
-				String result = DataUtility.getString(request.getParameter("result"));
-				if (result != null && result.length() > 0) {
-					Iterator<MarksheetBean> itr = list.iterator();
+					String result = DataUtility.getString(request.getParameter("result"));
+						if (result != null && result.length() > 0) {
+							Iterator<MarksheetBean> itr = list.iterator();
 
-					/* System.out.println(request.getParameter("tot"));
-					System.out.println("ifchla");
-					*/ while (itr.hasNext()) {
-						bean = itr.next();
+							/* System.out.println(request.getParameter("tot"));
+							System.out.println("ifchla");
+							*/ while (itr.hasNext()) {
+								bean = itr.next();
 
-						int phy = DataUtility.getInt(DataUtility.getStringData(bean.getPhysics()));
-						int chem = DataUtility.getInt(DataUtility.getStringData(bean.getChemistry()));
-						int math = DataUtility.getInt(DataUtility.getStringData(bean.getMaths()));
-						int total = (phy + chem + math);
-						float perc = total / 3;
-						/*  if(total!=t){
-						count=1;
-						}
-						 */
-						if (phy >= 33 && chem >= 33 && math >= 33 && result.equalsIgnoreCase("pass")) {
+								int phy = DataUtility.getInt(DataUtility.getStringData(bean.getPhysics()));
+								int chem = DataUtility.getInt(DataUtility.getStringData(bean.getChemistry()));
+								int math = DataUtility.getInt(DataUtility.getStringData(bean.getMaths()));
+								int total = (phy + chem + math);
+								float perc = total / 3;
+								/*  if(total!=t){
+								count=1;
+								}
+								 */
+								if (phy >= 33 && chem >= 33 && math >= 33 && result.equalsIgnoreCase("pass")) {
 				%>
 
 				<tr align="center">
@@ -129,20 +129,20 @@
 
 					<td>
 						<%
-						if (phy >= 33 && chem >= 33 && math >= 33) {
+							if (phy >= 33 && chem >= 33 && math >= 33) {
 						%> <span style="color: green"> Pass</span> <%
- } else {
+ 	} else {
  %> <span style="color: red"> Fail</span> <%
- }
+ 	}
  %>
 					</td>
 					<td><a href="MarksheetCtl?id=<%=bean.getId()%>">Edit</a></td>
 
 				</tr>
 				<%
-				}
-				if (result.equalsIgnoreCase("fail")) {
-				if (phy < 33 || chem < 33 || math < 33) {
+					}
+								if (result.equalsIgnoreCase("fail")) {
+									if (phy < 33 || chem < 33 || math < 33) {
 				%>
 
 				<tr align="center">
@@ -159,32 +159,32 @@
 
 					<td>
 						<%
-						if (phy >= 33 && chem >= 33 && math >= 33) {
+							if (phy >= 33 && chem >= 33 && math >= 33) {
 						%> <span style="color: green"> Pass</span> <%
- } else {
+ 	} else {
  %> <span style="color: red"> Fail</span> <%
- }
+ 	}
  %>
 					</td>
 					<td><a href="MarksheetCtl?id=<%=bean.getId()%>">Edit</a></td>
 
 				</tr>
 				<%
-				}
-				}
-				}
+					}
+								}
+							}
 				%>
 				<%
-				} else {
-				/* System.out.println("else cla");*/
-				while (it.hasNext()) {
-					bean = it.next();
+					} else {
+							/* System.out.println("else cla");*/
+							while (it.hasNext()) {
+								bean = it.next();
 
-					int phy = DataUtility.getInt(DataUtility.getStringData(bean.getPhysics()));
-					int chem = DataUtility.getInt(DataUtility.getStringData(bean.getChemistry()));
-					int math = DataUtility.getInt(DataUtility.getStringData(bean.getMaths()));
-					int total = (phy + chem + math);
-					float perc = total / 3;
+								int phy = DataUtility.getInt(DataUtility.getStringData(bean.getPhysics()));
+								int chem = DataUtility.getInt(DataUtility.getStringData(bean.getChemistry()));
+								int math = DataUtility.getInt(DataUtility.getStringData(bean.getMaths()));
+								int total = (phy + chem + math);
+								float perc = total / 3;
 				%>
 				<tr align="center">
 					<td><input type="checkbox" class="checkbox" name="ids"
@@ -200,11 +200,11 @@
 
 					<td>
 						<%
-						if (phy >= 33 && chem >= 33 && math >= 33) {
+							if (phy >= 33 && chem >= 33 && math >= 33) {
 						%> <span style="color: green"> Pass</span> <%
- } else {
+ 	} else {
  %> <span style="color: red"> Fail</span> <%
- }
+ 	}
  %>
 					</td>
 					<td><a href="MarksheetCtl?id=<%=bean.getId()%>">Edit</a></td>
@@ -212,26 +212,26 @@
 				</tr>
 
 				<%
-				}
+					}
 				%>
 				<%
-				}
+					}
 				%>
 			</table>
 			<table width="100%">
 				<tr>
 					<%
-					if (pageNo == 1) {
+						if (pageNo == 1) {
 					%>
 					<td><input type="submit" name="operation" disabled="disabled"
 						value="<%=MarksheetListCtl.OP_PREVIOUS%>"></td>
 					<%
-					} else {
+						} else {
 					%>
 					<td><input type="submit" name="operation"
 						value="<%=MarksheetListCtl.OP_PREVIOUS%>"></td>
 					<%
-					}
+						}
 					%>
 
 
@@ -251,13 +251,13 @@
 
 
 			<%
-			}
-			if (list.size() == 0) {
+				}
+				if (list.size() == 0) {
 			%>
 			<td align="center"><input type="submit" name="operation"
 				value="<%=MarksheetListCtl.OP_BACK%>"></td>
 			<%
-			}
+				}
 			%>
 
 

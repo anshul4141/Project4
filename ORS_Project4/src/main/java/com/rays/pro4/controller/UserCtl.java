@@ -25,7 +25,7 @@ import com.rays.pro4.Util.ServletUtility;
 /**
  * The Class UserCtl.
  * 
- * @author Shubham Yadav
+ * @author Anshul Prajapati
  * 
  */
 @WebServlet(name = "UserCtl", urlPatterns = { "/ctl/UserCtl" })
@@ -206,12 +206,12 @@ public class UserCtl extends BaseCtl {
 		// get model
 		UserModel model = new UserModel();
 		long id = DataUtility.getLong(request.getParameter("id"));
-		if (id > 0 || op != null) {
+		System.out.println("User Edit Id >= " + id);
+		if (id != 0 && id > 0) {
 			System.out.println("in id > 0  condition");
 			UserBean bean;
-			try { 
+			try {
 				bean = model.findByPK(id);
-				System.out.println("Ankit11111111111");
 				System.out.println(bean);
 				ServletUtility.setBean(bean, request);
 			} catch (ApplicationException e) {
