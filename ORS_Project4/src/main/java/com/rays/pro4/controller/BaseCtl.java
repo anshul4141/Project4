@@ -143,15 +143,15 @@ public abstract class BaseCtl extends HttpServlet {
 				System.out.println("running not validate>>>>>>>");
 				System.out.println("Bctl validate ");
 				BaseBean bean = (BaseBean) populateBean(request);
-				// wapis se inserted data dikhe jo phle in put kiya tha
+				// setBean method call for show inserted data
 				ServletUtility.setBean(bean, request);
 				ServletUtility.forward(getView(), request, response);
 				return;
 			}
 		}
-		System.out.println("B ctl Super servi");
 		super.service(request, response);
-		System.out.println("super. service called method " + request.getMethod() + ">> " + " / " + " Response is = "
+		System.out.println("BaseCtl super.service method ==> ");
+		System.out.println("super.service called method ==> " + request.getMethod() + " >> " + " / " + "Submit Operation is = "
 				+ response.encodeURL(op));
 	}
 

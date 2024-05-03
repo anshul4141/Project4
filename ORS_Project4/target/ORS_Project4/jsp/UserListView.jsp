@@ -56,23 +56,23 @@
 			</div>
 
 			<%
-			List rlist = (List) request.getAttribute("RoleList");
+				List rlist = (List) request.getAttribute("RoleList");
 
-			List ulist = (List) request.getAttribute("LoginId");
+				List ulist = (List) request.getAttribute("LoginId");
 
-			int next = DataUtility.getInt(request.getAttribute("nextlist").toString());
+				int next = DataUtility.getInt(request.getAttribute("nextlist").toString());
 			%>
 
 
 			<%
-			int pageNo = ServletUtility.getPageNo(request);
-			int pageSize = ServletUtility.getPageSize(request);
-			int index = ((pageNo - 1) * pageSize) + 1;
+				int pageNo = ServletUtility.getPageNo(request);
+				int pageSize = ServletUtility.getPageSize(request);
+				int index = ((pageNo - 1) * pageSize) + 1;
 
-			List list = ServletUtility.getList(request);
-			Iterator<UserBean> it = list.iterator();
+				List list = ServletUtility.getList(request);
+				Iterator<UserBean> it = list.iterator();
 
-			if (list.size() != 0) {
+				if (list.size() != 0) {
 			%>
 			<table width="100%" align="center">
 				<tr>
@@ -125,11 +125,11 @@
 				</tr>
 
 				<%
-				while (it.hasNext()) {
-					bean = it.next();
-					RoleModel model = new RoleModel();
-					RoleBean rolebean = new RoleBean();
-					rolebean = model.findByPK(bean.getRoleId());
+					while (it.hasNext()) {
+							bean = it.next();
+							RoleModel model = new RoleModel();
+							RoleBean rolebean = new RoleBean();
+							rolebean = model.findByPK(bean.getRoleId());
 				%>
 
 
@@ -151,7 +151,7 @@
 						onclick="return false;" <%}%>>Edit</a></td>
 				</tr>
 				<%
-				}
+					}
 				%>
 			</table>
 
@@ -159,34 +159,23 @@
 				<tr>
 					<th></th>
 					<%
-					if (pageNo == 1) {
+						if (pageNo == 1) {
 					%>
 					<td><input type="submit" name="operation" disabled="disabled"
 						value="<%=UserListCtl.OP_PREVIOUS%>"></td>
 					<%
-					} else {
+						} else {
 					%>
 					<td><input type="submit" name="operation"
 						value="<%=UserListCtl.OP_PREVIOUS%>"></td>
 					<%
-					}
+						}
 					%>
 
 					<td><input type="submit" name="operation"
 						value="<%=UserListCtl.OP_DELETE%>"></td>
 					<td><input type="submit" name="operation"
 						value="<%=UserListCtl.OP_NEW%>"></td>
-
-					<%--  <%	UserModel model = new UserModel();
-                     %>
-                     
-                     <% if(list.size() < pageSize || model.nextPK()-1 == bean.getId() ){%>
-
-                     		<td align="right"><input type="submit" name="operation" disabled="disabled" value="<%=UserListCtl.OP_NEXT%>"></td>
-                     <% }else{%>
-                     		<td align="right"><input type="submit" name="operation" value="<%=UserListCtl.OP_NEXT%>"></td>
-                     <%} %>
-        --%>
 					<td align="right"><input type="submit" name="operation"
 						value="<%=UserListCtl.OP_NEXT%>"
 						<%=(list.size() < pageSize || next == 0) ? "disabled" : ""%>></td>
@@ -196,13 +185,13 @@
 				</tr>
 			</table>
 			<%
-			}
-			if (list.size() == 0) {
+				}
+				if (list.size() == 0) {
 			%>
 			<td align="center"><input type="submit" name="operation"
 				value="<%=UserListCtl.OP_BACK%>"></td>
 			<%
-			}
+				}
 			%>
 
 			<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input

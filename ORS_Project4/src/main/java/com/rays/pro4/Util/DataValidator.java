@@ -151,35 +151,6 @@ public class DataValidator {
 		}
 	}
 
-	/**
-	 * Checks if value is Date
-	 * 
-	 * @param val
-	 * @return
-	 */
-	/*
-	 * public static boolean isDate(String val) {
-	 * 
-	 * Date d = null; if (isNotNull(val)) { d = DataUtility.getDate(val); } return d
-	 * != null; }
-	 */
-
-	/**
-	 * Checks if Date is on Sunday
-	 * 
-	 * @param val
-	 * @return
-	 */
-	/*
-	 * public static boolean isSunday(String val) {
-	 * 
-	 * Calendar cal = Calendar.getInstance(); cal.setTime(DataUtility.getDate(val));
-	 * int i = cal.get(Calendar.DAY_OF_WEEK);
-	 * 
-	 * if (i == Calendar.SUNDAY) { return true; } else { return false; }
-	 * 
-	 * }
-	 */
 	public static boolean isRollNo(String val) {
 
 		String rollreg = "[a-zA-Z]{2}[0-9]{3}";
@@ -226,11 +197,11 @@ public class DataValidator {
 		System.out.println("Not Null 2" + isNotNull("ABC"));
 		System.out.println("Not Null 3" + isNotNull(null));
 		System.out.println("Not Null 4" + isNull("123"));
-
 		System.out.println("is int" + isInteger(null));
 		System.out.println("Is int" + isInteger("ABC1"));
 		System.out.println("Is Int" + isInteger("123"));
 		System.out.println("is Int" + isNotNull("123"));
+		System.out.println("is mobile no " + isMobileNo("9669330519"));
 	}
 
 }
