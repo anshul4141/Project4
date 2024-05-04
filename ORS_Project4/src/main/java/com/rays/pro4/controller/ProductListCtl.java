@@ -26,8 +26,10 @@ public class ProductListCtl extends BaseCtl {
 		ProductBean bean = new ProductBean();
 
 		try {
-			List list = model.search(bean, 0, 0);
+
+			List list = model.list();
 			request.setAttribute("proList", list);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -46,6 +48,10 @@ public class ProductListCtl extends BaseCtl {
 		bean.setProductAmmount(DataUtility.getString(request.getParameter("productAmmount")));
 
 		bean.setPurchaseDate(DataUtility.getDate(request.getParameter("productDate")));
+
+		System.out.println(request.getParameter("proList"));
+
+		bean.setId(DataUtility.getLong(request.getParameter("proList")));
 
 		return bean;
 	}

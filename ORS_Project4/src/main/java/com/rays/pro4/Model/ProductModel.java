@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.rays.pro4.Bean.ProductBean;
+import com.rays.pro4.Bean.RoleBean;
+import com.rays.pro4.Exception.ApplicationException;
 import com.rays.pro4.Util.JDBCDataSource;
 
 public class ProductModel {
@@ -179,6 +181,34 @@ public class ProductModel {
 
 		return list;
 
+	}
+
+	public List list() throws Exception {
+
+		ArrayList list = new ArrayList();
+
+		StringBuffer sql = new StringBuffer("select * from st_product");
+
+		Connection conn = JDBCDataSource.getConnection();
+
+		PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+		ResultSet rs = pstmt.executeQuery();
+
+		while (rs.next()) {
+
+			ProductBean bean = new ProductBean();
+			bean.setId(rs.getLong(1));
+			bean.setProductName(rs.getString(2));
+			bean.setProductAmmount(rs.getString(3));
+			bean.setPurchaseDate(rs.getDate(4));
+
+			list.add(bean);
+
+		}
+
+		rs.close();
+
+		return list;
 	}
 
 }

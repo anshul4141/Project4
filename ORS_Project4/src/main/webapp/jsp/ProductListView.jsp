@@ -56,6 +56,7 @@
 
 			<%
 				int next = DataUtility.getInt(request.getAttribute("nextlist").toString());
+				List proList = (List) request.getAttribute("proList");
 			%>
 
 
@@ -76,7 +77,9 @@
 					</label> <input type="text" name="productName"
 						placeholder="Enter product Name"
 						value="<%=ServletUtility.getParameter("productName", request)%>">
-						&emsp; <input type="submit" name="operation"
+						&emsp; <label>Role</font> :
+					</label> <%=HTMLUtility.getList("proList", String.valueOf(bean.getPurchaseDate()), proList)%>
+						&nbsp; <input type="submit" name="operation"
 						value="<%=ProductListCtl.OP_SEARCH%>"> &nbsp; <input
 						type="submit" name="operation"
 						value="<%=ProductListCtl.OP_RESET%>"></td>

@@ -2,6 +2,8 @@ package com.rays.pro4.Bean;
 
 import java.util.Date;
 
+import com.rays.pro4.Util.DataUtility;
+
 // Create table st_product query
 //CREATE TABLE st_product (id INT PRIMARY KEY, productName VARCHAR(255), productAmmount VARCHAR(255), purchaseDate DATE);
 
@@ -44,7 +46,7 @@ public class ProductBean extends BaseBean {
 	@Override
 	public String getValue() {
 		// TODO Auto-generated method stub
-		return null;
+		return purchaseDate + "";
 	}
 
 }
