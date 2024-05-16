@@ -89,7 +89,7 @@ public class ProductModel {
 		pstmt.setString(2, bean.getProductAmmount());
 		pstmt.setDate(3, new java.sql.Date(bean.getPurchaseDate().getTime()));
 		pstmt.setString(4, bean.getProductCategory());
-		pstmt.setLong(4, bean.getId());
+		pstmt.setLong(5, bean.getId());
 
 		int i = pstmt.executeUpdate();
 

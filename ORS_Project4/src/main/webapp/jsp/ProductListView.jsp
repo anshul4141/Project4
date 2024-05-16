@@ -77,7 +77,7 @@
 					</label> <input type="text" name="productName"
 						placeholder="Enter product Name"
 						value="<%=ServletUtility.getParameter("productName", request)%>">
-						&emsp; <label>Role</font> :
+						&emsp; <label>Date</font> :
 					</label> <%=HTMLUtility.getList("proList", String.valueOf(bean.getPurchaseDate()), proList)%>
 						&nbsp; <input type="submit" name="operation"
 						value="<%=ProductListCtl.OP_SEARCH%>"> &nbsp; <input
