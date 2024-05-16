@@ -43,12 +43,13 @@ public class ProductModel {
 
 		conn.setAutoCommit(false);
 
-		PreparedStatement pstmt = conn.prepareStatement("insert into st_product values(?,?,?,?)");
+		PreparedStatement pstmt = conn.prepareStatement("insert into st_product values(?,?,?,?,?)");
 
 		pstmt.setInt(1, pk);
 		pstmt.setString(2, bean.getProductName());
 		pstmt.setString(3, bean.getProductAmmount());
 		pstmt.setDate(4, new java.sql.Date(bean.getPurchaseDate().getTime()));
+		pstmt.setString(5, bean.getProductCategory());
 
 		int i = pstmt.executeUpdate();
 		System.out.println("Product Add Successfully " + i);
@@ -82,11 +83,12 @@ public class ProductModel {
 		conn.setAutoCommit(false); // Begin transaction
 
 		PreparedStatement pstmt = conn.prepareStatement(
-				"update st_product set productName = ?, productAmmount = ?, purchaseDate = ? where id = ?");
+				"update st_product set productName = ?, productAmmount = ?, purchaseDate = ?, productCategory = ? where id = ?");
 
 		pstmt.setString(1, bean.getProductName());
 		pstmt.setString(2, bean.getProductAmmount());
 		pstmt.setDate(3, new java.sql.Date(bean.getPurchaseDate().getTime()));
+		pstmt.setString(4, bean.getProductCategory());
 		pstmt.setLong(4, bean.getId());
 
 		int i = pstmt.executeUpdate();
@@ -138,6 +140,10 @@ public class ProductModel {
 				sql.append(" AND productAmmount like '" + bean.getProductAmmount() + "%'");
 			}
 
+			if (bean.getProductCategory() != null && bean.getProductCategory().length() > 0) {
+				sql.append(" AND productCategory like '" + bean.getProductCategory() + "%'");
+			}
+
 			if (bean.getPurchaseDate() != null && bean.getPurchaseDate().getTime() > 0) {
 				Date d = new Date(bean.getPurchaseDate().getTime());
 				sql.append(" AND purchaseDate = '" + d + "'");
@@ -173,6 +179,7 @@ public class ProductModel {
 			bean.setProductName(rs.getString(2));
 			bean.setProductAmmount(rs.getString(3));
 			bean.setPurchaseDate(rs.getDate(4));
+			bean.setProductCategory(rs.getString(5));
 
 			list.add(bean);
 
@@ -197,10 +204,12 @@ public class ProductModel {
 		while (rs.next()) {
 
 			ProductBean bean = new ProductBean();
+
 			bean.setId(rs.getLong(1));
 			bean.setProductName(rs.getString(2));
 			bean.setProductAmmount(rs.getString(3));
 			bean.setPurchaseDate(rs.getDate(4));
+			bean.setProductCategory(rs.getString(5));
 
 			list.add(bean);
 

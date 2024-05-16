@@ -53,6 +53,8 @@ public class ProductListCtl extends BaseCtl {
 
 		bean.setId(DataUtility.getLong(request.getParameter("proList")));
 
+		bean.setProductCategory(DataUtility.getString(request.getParameter("productCategory")));
+
 		return bean;
 	}
 

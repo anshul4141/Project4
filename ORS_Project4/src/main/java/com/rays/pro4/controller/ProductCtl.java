@@ -36,6 +36,10 @@ public class ProductCtl extends BaseCtl {
 			request.setAttribute("purchaseDate", PropertyReader.getValue("error.require", "purchaseDate"));
 			pass = false;
 		}
+		if (DataValidator.isNull(request.getParameter("productCategory"))) {
+			request.setAttribute("productCategory", PropertyReader.getValue("error.require", "productCategory"));
+			pass = false;
+		}
 
 		return pass;
 
@@ -53,6 +57,8 @@ public class ProductCtl extends BaseCtl {
 		bean.setProductAmmount(DataUtility.getString(request.getParameter("productAmmount")));
 
 		bean.setPurchaseDate(DataUtility.getDate(request.getParameter("purchaseDate")));
+
+		bean.setProductCategory(DataUtility.getString(request.getParameter("productCategory")));
 
 		return bean;
 
@@ -118,6 +124,7 @@ public class ProductCtl extends BaseCtl {
 
 				try {
 					long pk = model.add(bean);
+					ServletUtility.setBean(bean, request);
 					ServletUtility.setSuccessMessage("product is successfully Added", request);
 					bean.setId(pk);
 				} catch (Exception e) {

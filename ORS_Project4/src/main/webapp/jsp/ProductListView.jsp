@@ -97,6 +97,7 @@
 					<th>ProductName</th>
 					<th>ProductAmmount</th>
 					<th>PurchaseDate</th>
+					<th>Category</th>
 					<th>Edit</th>
 				</tr>
 
@@ -113,6 +114,7 @@
 					<td><%=bean.getProductName()%></td>
 					<td><%=bean.getProductAmmount()%></td>
 					<td><%=bean.getPurchaseDate()%></td>
+					<td><%=bean.getProductCategory()%></td>
 					<td><a href="ProductCtl?id=<%=bean.getId()%>">Edit</a></td>
 				</tr>
 				<%

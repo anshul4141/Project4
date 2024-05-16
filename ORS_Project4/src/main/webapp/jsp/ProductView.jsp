@@ -93,6 +93,24 @@
 					<td style="position: fixed"><font color="red"> <%=ServletUtility.getErrorMessage("productAmmount", request)%></font></td>
 				</tr>
 				<tr>
+				<tr>
+					<th style="padding: 3px"></th>
+				</tr>
+				<tr>
+					<th align="left">Category <span style="color: red">*</span> :
+					</th>
+					<td>
+						<%
+							HashMap map = new HashMap();
+							map.put("HighCategory", "HighCategory");
+							map.put("LowCategory", "LowCategory");
+
+							String hlist = HTMLUtility.getList("productCategory", String.valueOf(bean.getProductCategory()), map);
+						%> <%=hlist%>
+					</td>
+					<td style="position: fixed"><font color="red"> <%=ServletUtility.getErrorMessage("productCategory", request)%></font></td>
+				</tr>
+				<tr>
 					<th style="padding: 3px"></th>
 				</tr>
 				<tr>
