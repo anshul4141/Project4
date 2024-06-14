@@ -1,0 +1,25 @@
+1. Kya lekar ayee ho ?.
+2. what is ORSProject-4 ?.
+3. ORSProject-4 kese banaya ?
+4. by default index.jsp hi kyon open hota hai ?
+5. index.jsp page pe link or image kese lahai ?
+6. What is link ?
+7. Welcome.jsp kese opne hua ?
+8. How to include header.jsp or footer.jsp ?
+9. what is direct link or indirect lint ?
+10. hi, guest kiske scop mai hai ?
+11. how many scopes in your application ?
+12. copyright ka symbol kese aya ?
+13. Link ko seprate kese kiya ?
+14. what is url ?
+15. what is uri ?
+16. how to deploye project on server ?
+17. what is mvc ?
+16. what is mvc guidelines ?
+17. LoginView.jsp kese open hua ?
+18. login or password ki field kese banai ?
+19. what is input validation ?
+20. what is business validation ?
+21. flow of input validation ?
+23. flow of business validation ?
+24. flow of Authenticate ?
