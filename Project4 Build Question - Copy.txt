@@ -23,3 +23,8 @@
 21. flow of input validation ?
 23. flow of business validation ?
 24. flow of Authenticate ?
+25. flow of business validation in loginView.jsp ?
+26. flow of business validation in userRegistrationView.jsp ?
+27. field of gender in userRegistrationView.jsp ? 
+28. inputvalidation in userRegistrationView.jsp ?
+29. by default role in userRegistrationView.jsp ? 
