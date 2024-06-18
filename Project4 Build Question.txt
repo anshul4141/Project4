@@ -1,3 +1,5 @@
+before login
+
 1. Kya lekar ayee ho ?.
 2. what is ORSProject-4 ?.
 3. ORSProject-4 kese banaya ?
@@ -28,3 +30,29 @@
 27. field of gender in userRegistrationView.jsp ? 
 28. inputvalidation in userRegistrationView.jsp ?
 29. by default role in userRegistrationView.jsp ? 
+30. Authentication ka flow ?
+31. hi, firstName or role kese aya ?
+32. header pe sari link kese show hui ?
+
+after login
+
+33. Flow of userList ? 
+34. Userlist pe click kiya to 10 records hi kyon aye ?
+35. how to applay pagination in your application ?
+36. search field kese lagai ?
+37. flow of user delete ?
+38. what is where 1=1?
+
+
+
+
+
+
+productBean.java
+create table st_product
+productModel.java
+productModelTest.java
+productView.jsp
+productCtl.java
+productListCtl.java
+productListView.jsp
