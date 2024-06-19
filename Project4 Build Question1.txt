@@ -47,6 +47,16 @@ after login
 41. preload kese lagai ?
 42. flow of user delete ?
 43. merit marksheet list ki query ?
+44. edit ki link kese banai ?
+45. edit pe click kiya tho data fill hoke kesea aya ?
+46. edit pe click kiya tho model ki konsi method chali ?
+47. what is business data ?
+48. what is non-business data ?
+49. what is non-business primary key ?
+50. what is business primary key ?
+51. non-business primary key kese banai ?
+52. what is java doc and how to applay ?
+53. system.properties ke parameter ?
 
 
 
