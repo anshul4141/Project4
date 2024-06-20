@@ -57,9 +57,26 @@ after login
 51. non-business primary key kese banai ?
 52. what is java doc and how to applay ?
 53. system.properties ke parameter ?
+54. userModel ki methods ke return type ?
+55. userModel ki methods ki queries ?
+56. how many design pattern use in application ?
+1. frontCtl design pattern ?
+2. Builder design pattern ?
+3. SingleTon design pattern ?
+4. fectory design pattern ?
 
 
 
+Q : - what is frontCtl ?
+Q : - how to applay frontCtl ?
+Q : - Filter ki life cycle method ?
+Q : - frontCtl kaha kaha pe applay kiya ?
+Q : - frontCtl me konsa design pattern use kiya hai ?
+
+
+
+queries :-
+userModel
 
 
 
